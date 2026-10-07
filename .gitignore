@@ -1,0 +1,9 @@
+# Ignorer les données générées et checkpoints
+spark_etl/output/
+
+# Ignorer les fichiers système et Python
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/

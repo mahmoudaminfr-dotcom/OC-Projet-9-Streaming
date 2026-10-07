@@ -1,0 +1,149 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="indutechdata-hybrid" name="InduTechData - Architecture Hybride">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Titre -->
+        <mxCell id="title" value="InduTechData - Architecture Hybride" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=24;fontStyle=1;fontColor=#1F2937;" vertex="1" parent="1">
+          <mxGeometry x="400" y="10" width="800" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ZONE 1 : ON-PREMISE -->
+        <mxCell id="zone_onprem" value="Zone 1 : SI On-Premise" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F3F4F6;strokeColor=#6B7280;strokeWidth=2;dashed=1;verticalAlign=top;align=left;spacingLeft=15;spacingTop=8;fontSize=18;fontStyle=1;fontColor=#374151;arcSize=2;" vertex="1" parent="1">
+          <mxGeometry x="30" y="70" width="560" height="1040" as="geometry"/>
+        </mxCell>
+
+        <!-- ZONE 2 : AWS -->
+        <mxCell id="zone_aws" value="Zone 2 : Cloud AWS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF7E6;strokeColor=#FF9900;strokeWidth=2;verticalAlign=top;align=left;spacingLeft=15;spacingTop=8;fontSize=18;fontStyle=1;fontColor=#B45309;arcSize=2;" vertex="1" parent="1">
+          <mxGeometry x="900" y="70" width="720" height="1040" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== ON-PREMISE ===== -->
+
+        <!-- Active Directory -->
+        <mxCell id="ad" value="&lt;b&gt;Serveur Active Directory (AD)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#1D4ED8;strokeWidth=2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="240" y="130" width="220" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Serveur ERP -->
+        <mxCell id="erp" value="&lt;b&gt;Serveur dédié ERP&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E7FF;strokeColor=#4338CA;strokeWidth=2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="80" y="320" width="200" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Serveur CRM -->
+        <mxCell id="crm" value="&lt;b&gt;Serveur dédié CRM&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E0E7FF;strokeColor=#4338CA;strokeWidth=2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="340" y="320" width="200" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- Cluster SQL Server (cylindre) -->
+        <mxCell id="sql" value="&lt;b&gt;Cluster SQL Server&lt;/b&gt;&lt;br&gt;40 To - ERP/CRM" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#FEE2E2;strokeColor=#B91C1C;strokeWidth=2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="190" y="500" width="220" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Baie SAN (cylindre) -->
+        <mxCell id="san" value="&lt;b&gt;Baie de stockage SAN&lt;/b&gt;&lt;br&gt;10 To - Logs/IoT" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#FEF3C7;strokeColor=#B45309;strokeWidth=2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="80" y="780" width="220" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Sources IoT -->
+        <mxCell id="iot" value="&lt;b&gt;Sources de données IoT&lt;/b&gt;&lt;br&gt;(capteurs / machines)" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#DCFCE7;strokeColor=#15803D;strokeWidth=2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="330" y="960" width="220" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== AWS ===== -->
+
+        <!-- IAM Identity Center -->
+        <mxCell id="iam" value="&lt;b&gt;AWS IAM Identity Center&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCE7F3;strokeColor=#BE185D;strokeWidth=2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="130" width="240" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- AWS DMS -->
+        <mxCell id="dms" value="&lt;b&gt;AWS DMS&lt;/b&gt;&lt;br&gt;Database Migration Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFEDD5;strokeColor=#EA580C;strokeWidth=2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="950" y="520" width="220" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- Amazon S3 (cylindre) -->
+        <mxCell id="s3" value="&lt;b&gt;Amazon S3&lt;/b&gt;&lt;br&gt;Data Lake" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#DCFCE7;strokeColor=#15803D;strokeWidth=2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="500" width="220" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Amazon Redshift (cylindre) -->
+        <mxCell id="redshift" value="&lt;b&gt;Amazon Redshift&lt;/b&gt;&lt;br&gt;Data Warehouse" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#EDE9FE;strokeColor=#6D28D9;strokeWidth=2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="780" width="220" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Redpanda -->
+        <mxCell id="redpanda" value="&lt;b&gt;Redpanda&lt;/b&gt;&lt;br&gt;Plateforme de streaming" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEE2E2;strokeColor=#DC2626;strokeWidth=2;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="950" y="960" width="220" height="90" as="geometry"/>
+        </mxCell>
+
+        <!-- ===== CONNEXIONS ===== -->
+
+        <!-- Serveurs ERP/CRM -> SQL Server -->
+        <mxCell id="e_erp_sql" value="" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=2;strokeColor=#4338CA;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.15;entryY=0.2;entryDx=0;entryDy=0;" edge="1" parent="1" source="erp" target="sql">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_crm_sql" value="" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=2;strokeColor=#4338CA;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.85;entryY=0.2;entryDx=0;entryDy=0;" edge="1" parent="1" source="crm" target="sql">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 1. AD <-> IAM Identity Center -->
+        <mxCell id="e_ad_iam" value="Synchronisation SSO / Protocole : SSL/TLS" style="endArrow=classic;startArrow=classic;html=1;strokeWidth=3;strokeColor=#BE185D;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ad" target="iam">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 2. IoT -> Redpanda -->
+        <mxCell id="e_iot_redpanda" value="Flux temps réel (50 Go/mois) / Protocole : SSL/TLS" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#15803D;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="iot" target="redpanda">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Redpanda -> S3 -->
+        <mxCell id="e_redpanda_s3" value="Ingestion continue" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#DC2626;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="redpanda" target="s3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1380" y="1005"/>
+              <mxPoint x="1380" y="700"/>
+              <mxPoint x="1380" y="640"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 3. SQL Server -> DMS -->
+        <mxCell id="e_sql_dms" value="Point de synchronisation CDC &amp;amp; Batch / Protocole : SSL/TLS" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#B91C1C;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="sql" target="dms">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- DMS -> S3 -->
+        <mxCell id="e_dms_s3" value="Staging" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#EA580C;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="dms" target="s3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- S3 -> Redshift -->
+        <mxCell id="e_s3_redshift" value="Commande COPY" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#6D28D9;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="s3" target="redshift">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 4. SAN -> S3 -->
+        <mxCell id="e_san_s3" value="Transfert de fichiers / Protocole : SSL/TLS" style="endArrow=classic;html=1;strokeWidth=3;strokeColor=#B45309;fontSize=12;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="san" target="s3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="650" y="845"/>
+              <mxPoint x="650" y="740"/>
+              <mxPoint x="860" y="740"/>
+              <mxPoint x="860" y="440"/>
+              <mxPoint x="1380" y="440"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Légende -->
+        <mxCell id="legend" value="&lt;b&gt;Légende&lt;/b&gt;&lt;br&gt;Cylindre = base de données / stockage&lt;br&gt;Rectangle = serveur / service&lt;br&gt;Hexagone = source IoT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9CA3AF;align=left;spacingLeft=10;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="640" y="1000" width="220" height="80" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,41 @@
+services:
+  redpanda:
+    image: docker.redpanda.com/redpandadata/redpanda:latest
+    container_name: redpanda_broker
+    command:
+      - redpanda
+      - start
+      - --mode dev-container
+      - --kafka-addr PLAINTEXT://0.0.0.0:9092
+      - --advertise-kafka-addr PLAINTEXT://redpanda_broker:9092
+    ports:
+      - "9092:9092"
+
+  ticket_producer:
+    build: ./producer
+    container_name: python_producer
+    depends_on:
+      - redpanda
+
+  redpanda-console:
+    image: docker.redpanda.com/redpandadata/console:latest
+    container_name: redpanda_console
+    depends_on:
+      - redpanda
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_BROKERS: redpanda_broker:9092
+
+  spark_etl:
+    build: ./spark_etl
+    container_name: pyspark_processor
+    depends_on:
+      - redpanda
+      - ticket_producer
+    ports:
+      - "4040:4040"
+    environment:
+      - SPARK_LOCAL_IP=0.0.0.0
+    volumes:
+      - ./spark_etl/output:/app/output
