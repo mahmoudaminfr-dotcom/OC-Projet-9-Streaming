@@ -16,6 +16,9 @@ TOPIC_NAME = 'client_tickets'
 TICKET_TYPES = ['Bug', 'Demande de fonctionnalité', 'Question technique', 'Problème de facturation']
 TEAMS = ['Support N1', 'Support N2', 'DevOps', 'Facturation']
 STATUSES = ['Nouveau', 'En cours', 'Résolu']
+# Nouveaux champs 
+PRIORITES = ['Basse', 'Moyenne', 'Haute', 'Urgente']
+DEMANDES = ['Problème de connexion', 'Assistance configuration', 'Demande de remboursement', 'Bug affichage']
 
 def generate_ticket():
     return {
@@ -24,7 +27,10 @@ def generate_ticket():
         'timestamp': datetime.utcnow().isoformat(),
         'ticket_type': random.choice(TICKET_TYPES),
         'team_assigned': random.choice(TEAMS),
-        'status': random.choice(STATUSES)
+        'status': random.choice(STATUSES),
+        # Ajout des nouveaux champs dans le ticket généré
+        'demande': random.choice(DEMANDES),
+        'priorite': random.choice(PRIORITES)
     }
 
 if __name__ == "__main__":

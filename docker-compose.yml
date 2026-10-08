@@ -10,6 +10,8 @@ services:
       - --advertise-kafka-addr PLAINTEXT://redpanda_broker:9092
     ports:
       - "9092:9092"
+    volumes:
+      - redpanda-data:/var/lib/redpanda/data
 
   ticket_producer:
     build: ./producer
@@ -39,3 +41,6 @@ services:
       - SPARK_LOCAL_IP=0.0.0.0
     volumes:
       - ./spark_etl/output:/app/output
+
+volumes:
+  redpanda-data:
